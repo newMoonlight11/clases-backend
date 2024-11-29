@@ -1,0 +1,36 @@
+composer create-project laravel/laravel (nombre de la app)
+
+php artisan -> el kit de herramientas
+
+php artisan make:controller (nombre del controlador)
+
+ public function show($product, $category = null)
+    {
+        return view('products.show', compact('product', 'category'));
+    }
+
+php artisan.show
+php artisan migrate
+php artisan make:migration create_categories_table
+php artisan migrate:rollback (deshacer cambios)
+php artisan make:migration add_url_image_to_products_table
+$table->string('url_image')->nullable()->after('price');
+php artisan make:model Category
+php artisan tinker
+al usar tinker, sí no cambio en nombre de la variable y genero un nuevo registro, lo actualiza
+>use App\Models\Category;
+> $myCategoria2 = new Category();                                                                                                                             
+> $myCategoria2->name = "Ropa";                                                                                                                               
+> $myCategoria2->description = "descripción2";                                                                                                                
+> $misCategorias = Category::all(); 
+
+php artisan db:seed
+php artisan make:seeder CategorySeeder
+php artisan migrate:reset
+
+php artisan make:request FamiliaRequest
+
+reactivos.store
+(nombre)s.store
+php artisan migrate --path=/database/migrations/2024_08_29_161358_create_unidad_table.php
+
